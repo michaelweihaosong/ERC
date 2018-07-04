@@ -9,7 +9,6 @@ from dateutil.relativedelta import relativedelta
 import scipy.optimize as opt
 import numpy as np
 import pandas as pd
-from numpy.testing import assert_almost_equal
 
 
 def getERCWeights(cov, x0=None, options=None, scale=10000):
@@ -56,7 +55,7 @@ def retToCov(t0, ret, numOfMons = 12):
     cov = np.cov(relevantRet.values, rowvar=False)
     return cov
 
-#
+
 def loopGetERCWeights(ret, x0=None, options=None, scale=10000, numOfMons=12):
     retVal = ret.copy()
     mrcRatioList = []
