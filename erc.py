@@ -74,13 +74,5 @@ def loopGetERCWeights(ret, x0=None, options=None, scale=10000, numOfMons=12):
         
     return retVal, mrcRatioList
 
-df = pd.read_csv(r'C:\Users\Mike Song\Google Drive\Balanced Portfolio\smallDataset-test.csv', index_col=0, parse_dates=[0])
-
-#A = np.random.rand(10, 10)/100
-#cov = A.dot(A.transpose())
-#X = getERCWeights(cov)
-#mrcRatio = np.dot(cov, X)*X/np.dot(np.dot(X.T, cov), X)
 
 
-
-loopWeights, list = loopGetERCWeights(df)
