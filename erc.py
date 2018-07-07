@@ -39,6 +39,9 @@ def getERCWeights(cov, x0=None, options=None, scale=10000):
     # checking cov is pd
     if np.any(np.linalg.eigvals(cov) <= 0):
         return None
+    # scaling cov if F-Norm is too small
+    if np.linalg.norm(cov) <= 0.1:
+        cov = cov*scale
     if options == None:
         options = {'ftol':1e-20, 'maxiter':2000, 'disp':True}
 
